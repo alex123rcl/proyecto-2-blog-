@@ -1,0 +1,28 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .link-button {
+    background: none;           /* Elimina el fondo */
+    border: none;              /* Elimina el borde */
+    color: blue;               /* Color del texto, puedes cambiarlo */
+    text-decoration: underline; /* Subraya el texto para parecer un enlace */
+    cursor: pointer;           /* Cambia el cursor al pasar el mouse */
+  }
+  
+  .link-button:hover {
+    color: darkblue;           /* Cambia el color al pasar el mouse */
+    text-decoration: underline; /* Mantiene el subrayado al pasar el mouse */
+  }
+  
