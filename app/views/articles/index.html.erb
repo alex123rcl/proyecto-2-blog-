@@ -24,8 +24,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+           
+              <%= button_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link navbar-btn" %>
+           
             <%= link_to 'My Blog', articles_path, class: 'nav-link js-scroll-trigger' %>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#"></a>
           </li>
@@ -66,9 +70,11 @@
             <td><%= article.title %></td>
             <td><%= article.text %></td>
             <td><%= link_to 'Show', article_path(article) %></td>
+        
             <td><%= link_to 'Edit', edit_article_path(article) %></td>
             <td>
               <%= button_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+      
             </td>
           </tr>
         <% end %>

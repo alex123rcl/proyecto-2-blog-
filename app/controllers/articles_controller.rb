@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.build(article_params)  # Correctamente instanciamos el artículo asociado al usuario
+    @article = current_user.articles.build(article_params)  
     if @article.save
       redirect_to @article
     else
@@ -16,8 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    # No es necesario definir @article aquí porque ya se setea en el before_action
-    @comments = @article.comments.includes(:user)
+       @comments = @article.comments.includes(:user)
   end
   
   def index
@@ -25,7 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    # No es necesario definir @article aquí porque ya se setea en el before_action
+   
   end 
 
   def update
@@ -47,8 +46,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  # Asegúrate de que @article se setee correctamente para las acciones correspondientes
-  def set_article
+   def set_article
     @article = Article.find(params[:id])
   end
 
